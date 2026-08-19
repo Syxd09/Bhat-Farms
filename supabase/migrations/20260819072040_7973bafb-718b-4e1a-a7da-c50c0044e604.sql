@@ -1,0 +1,13 @@
+revoke all on function public.handle_new_user() from public, anon, authenticated;
+revoke all on function public.touch_updated_at() from public, anon, authenticated;
+revoke all on function public.products_search_text() from public, anon, authenticated;
+revoke all on function public.refresh_product_rating() from public, anon, authenticated;
+revoke all on function public.orders_on_status_change() from public, anon, authenticated;
+revoke all on function public.place_order(jsonb, uuid, text, text, text, date, text) from public, anon;
+grant execute on function public.place_order(jsonb, uuid, text, text, text, date, text) to authenticated;
+revoke all on function public.has_role(uuid, public.app_role) from public, anon;
+revoke all on function public.is_staff(uuid) from public, anon;
+grant execute on function public.has_role(uuid, public.app_role) to authenticated;
+grant execute on function public.is_staff(uuid) to authenticated;
+create schema if not exists extensions;
+alter extension pg_trgm set schema extensions;
