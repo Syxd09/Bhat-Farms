@@ -45,11 +45,6 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/account" className="hover:text-sidebar-primary">
-                My orders
-              </Link>
-            </li>
-            <li>
               <Link to="/cart" className="hover:text-sidebar-primary">
                 Cart
               </Link>
