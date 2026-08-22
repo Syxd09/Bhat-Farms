@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Menu, Search, ShoppingBag, User } from "lucide-react";
+import { Menu, Search, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -90,11 +90,6 @@ export function Header() {
         </form>
 
         <div className="ml-auto flex items-center gap-1 md:ml-2">
-          <Button asChild variant="ghost" size="icon" aria-label="Account">
-            <Link to="/account">
-              <User className="size-5" />
-            </Link>
-          </Button>
           <Button asChild variant="ghost" size="icon" className="relative" aria-label="Cart">
             <Link to="/cart">
               <ShoppingBag className="size-5" />
